@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
 const tempSource = fs.readFileSync('./handlebars/emailTemp.hbs', 'utf-8');
 const temp = handlebars.compile(tempSource);
 
-app.post('/submit-quote', (req, res) => {
+app.post('/submit-form', (req, res) => {
   const { email, firstName, lastName, phone, address, city, state, zip, year, message, add } = req.body;
   
   const emailData =  { 
