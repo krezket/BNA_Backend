@@ -26,8 +26,8 @@ app.post('/submit-form', (req, res) => {
   const { email, firstName, lastName, phone, address, city, state, zip, year, message, add } = req.body;
   
   const emailData =  { 
-    firstName: firstName, 
-    lastName: lastName, 
+    studentName: studentName, 
+    studentLastName: studentLastName, 
     message: message, 
     phone: phone, 
     email: email, 
