@@ -25,18 +25,51 @@ const temp = handlebars.compile(tempSource);
 app.post('/submit-form', (req, res) => {
   const { email, firstName, lastName, phone, address, city, state, zip, year, message, add } = req.body;
   
-  const emailData =  { 
-    studentName: studentName, 
-    studentLastName: studentLastName, 
-    message: message, 
-    phone: phone, 
-    email: email, 
-    address: address,
-    city: city, 
-    state: state, 
-    zip: zip, 
-    year: year, 
-    add: add 
+    const emailData =  { 
+        studentName: studentName, 
+        studentLastName: studentLastName, 
+        studentGender: studentGender, 
+        studentDOB: studentDOB, 
+        allergies: allergies, 
+        illnesses: illnesses, 
+        medications: medications, 
+        interests: interests, 
+
+        guardianRelation: guardianRelation,
+        firstGuardianName: firstGuardianName,
+        firstGuardianLastName: firstGuardianLastName,
+        firstGuardianGender: firstGuardianGender,
+        firstGuardianPhone: firstGuardianPhone,
+        firstGuardianEmail: firstGuardianEmail,
+        firstGuardianEmplr: firstGuardianEmplr,
+
+        emergencyName: emergencyName,
+        emergencyLastName: emergencyLastName,
+        emergencyPhone: emergencyPhone,
+        emergencyEmail: emergencyEmail,
+
+        optYes: optYes,
+        optNo: optNo,
+
+        unwelcomeName1: unwelcomeName1,
+        unwelcomeLastName1: unwelcomeLastName1,
+        unwelcomeName2: unwelcomeName2,
+        unwelcomeLastName2: unwelcomeLastName2,
+        unwelcomeName3: unwelcomeName3,
+        unwelcomeLastName3: unwelcomeLastName3,
+
+        guardianRelation2: guardianRelation2,
+        secondGuardianName: secondGuardianName,
+        secondGuardianLastName: secondGuardianLastName,
+        secondGuardianGender: secondGuardianGender,
+        secondGuardianPhone: secondGuardianPhone,
+        secondGuardianEmail: secondGuardianEmail,
+
+        address: address,
+        city: city, 
+        state: state, 
+        zip: zip, 
+        hphone: hphone, 
     }
 
     const content = temp(emailData)
@@ -45,7 +78,7 @@ app.post('/submit-form', (req, res) => {
     from: email,
     to: 'https.tony@yahoo.com',
     // to: 'acg.renovations.llc@gmail.com',
-    subject: `New Request From ${firstName} ${lastName}`,
+    subject: `New Request From ${firstGuardianName} ${lastGuardianLastName}`,
     html: content
   };
 
@@ -63,4 +96,3 @@ app.post('/submit-form', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-.
