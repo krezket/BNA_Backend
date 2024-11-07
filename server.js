@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail', 
     auth: {
       user: 'anthonyguerrero62@gmail.com', 
-      pass: 'iwgtdzuwfvctujbw' 
+      pass: 'zgmz nuhk lamt ombp' 
     }
 }));
 
@@ -23,7 +23,46 @@ const tempSource = fs.readFileSync('./handlebars/emailTemp.hbs', 'utf-8');
 const temp = handlebars.compile(tempSource);
 
 app.post('/submit-form', (req, res) => {
-  const { email, firstName, lastName, phone, address, city, state, zip, year, message, add } = req.body;
+  const { 
+        studentName,
+        studentLastName,
+        studentGender,
+        studentDOB,
+        allergies,
+        illnesses,
+        medications,
+        interests,
+        guardianRelation,
+        firstGuardianName, 
+        firstGuardianLastName, 
+        firstGuardianGender, 
+        firstGuardianPhone,
+        firstGuardianEmail,
+        firstGuardianEmplr,
+        emergencyName,
+        emergencyLastName,
+        emergencyPhone,
+        emergencyEmail,
+        optYes,
+        optNo,
+        unwelcomeName1,
+        unwelcomeLastName1,
+        unwelcomeName2,
+        unwelcomeLastName2,
+        unwelcomeName3,
+        unwelcomeLastName3,
+        guardianRelation2,
+        secondGuardianName,
+        secondGuardianLastName,
+        secondGuardianGender,
+        secondGuardianPhone,
+        secondGuardianEmail,
+        address, 
+        city, 
+        state, 
+        zip, 
+        hphone 
+    } = req.body;
   
     const emailData =  { 
         studentName: studentName, 
@@ -75,10 +114,10 @@ app.post('/submit-form', (req, res) => {
     const content = temp(emailData)
 
   const mailOptions = {
-    from: email,
+    from: firstGuardianEmail,
     to: 'https.tony@yahoo.com',
     // to: 'acg.renovations.llc@gmail.com',
-    subject: `New Request From ${firstGuardianName} ${lastGuardianLastName}`,
+    subject: `New Request From ${firstGuardianName} ${firstGuardianLastName}`,
     html: content
   };
 
