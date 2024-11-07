@@ -24,7 +24,7 @@
 
 <body>
     <div>
-        <p><strong>From: </strong>{{firstGuardianName}} {{firstGuardianLastName}}</p>
+        <h1><strong>From: </strong>{{firstGuardianName}} {{firstGuardianLastName}}</h1>
         <p><strong>Realation to student: </strong>{{guardianRelation}}</p>
         <p><strong>Gender: </strong>{{firstGuardianGender}}</p>
         <p><strong>Phone Number: </strong>{{firstGuardianPhone}}</p>
@@ -43,9 +43,7 @@
     </div>
 
     <div id="emergency-contact">
-        <p><strong>Emergency Contact Info:</strong></p>
-        <p>{{emergencyName}}</p>
-        <p>{{emergencyLastName}}</p>
+        <p><strong>Emergency Contact Info:</strong>{{emergencyName}} {{emergencyLastName}}</p>
         <p>{{emergencyPhone}}</p>
         <p>{{emergencyEmail}}</p>
     </div>
@@ -57,11 +55,9 @@
     </div>
 
     <div class="unwelcome">
-        <p><strong>Unwelcome: </strong>{{unwelcomeName1}}</p> <p>{{unwelcomeLastName1}}</p>
-        <p>{{unwelcomeName2}}</p>
-        <p>{{unwelcomeLastName2}}</p>
-        <p>{{unwelcomeName3}}</p>
-        <p>{{unwelcomeLastName3}}</p>
+        <p><strong>Unwelcome: </strong>{{unwelcomeName1}} {{unwelcomeLastName1}}</p>
+        <p><strong>Unwelcome: </strong>{{unwelcomeName2}} {{unwelcomeLastName2}}</p>
+        <p><strong>Unwelcome: </strong>{{unwelcomeName3}} {{unwelcomeLastName3}}</p>
     </div>
 
     <div class="second-guardian">
