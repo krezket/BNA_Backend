@@ -122,7 +122,7 @@ app.post('/submit-form', (req, res) => {
   const mailOptions = {
     from: firstGuardianEmail,
     to: 'https.tony@yahoo.com',
-    subject: `New Request From ${firstGuardianName} ${firstGuardianLastName}`,
+    subject: `New Request From ${firstGuardianName}${firstGuardianLastName}`,
     html: content
   };
 
