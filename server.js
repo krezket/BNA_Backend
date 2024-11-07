@@ -67,7 +67,7 @@ app.post('/submit-form', (req, res) => {
         city, 
         state, 
         zip, 
-        hphone 
+        hphone, 
     } = req.body;
   
     const emailData =  { 
@@ -122,7 +122,6 @@ app.post('/submit-form', (req, res) => {
   const mailOptions = {
     from: firstGuardianEmail,
     to: 'https.tony@yahoo.com',
-    // to: 'acg.renovations.llc@gmail.com',
     subject: `New Request From ${firstGuardianName} ${firstGuardianLastName}`,
     html: content
   };
