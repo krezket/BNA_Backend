@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         body {
@@ -8,26 +7,23 @@
             font-size: 14px;
         }
         h1 {
-            border-bottom: 1px solid white;
-        }
-        div {
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid #000; 
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Primary Guardian</strong></h1>
         <p><strong>Name: </strong>{{firstGuardianName}} {{firstGuardianLastName}}</p>
-        <p><strong>Realation to student: </strong>{{guardianRelation}}</p>
+        <p><strong>Relation to student: </strong>{{guardianRelation}}</p>
         <p><strong>Gender: </strong>{{firstGuardianGender}}</p>
         <p><strong>Phone Number: </strong>{{firstGuardianPhone}}</p>
         <p><strong>Email: </strong>{{firstGuardianEmail}}</p>
         <p><strong>Employer: </strong>{{firstGuardianEmplr}}</p>
     </div>
 
-    <div id="student">
+    <div id="student" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Student Info</strong></h1>
         <p><strong>Name: </strong>{{studentName}} {{studentLastName}}</p>
         <p><strong>Gender: </strong>{{studentGender}}</p>
@@ -38,36 +34,36 @@
         <p><strong>Interests: </strong>{{interests}}</p>
     </div>
 
-    <div id="emergency-contact">
+    <div id="emergency-contact" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Emergency Contact Info</strong></h1>
         <p><strong>Name: </strong>{{emergencyName}} {{emergencyLastName}}</p>
         <p><strong>Phone Number: </strong>{{emergencyPhone}}</p>
         <p><strong>Email: </strong>{{emergencyEmail}}</p>
     </div>
 
-    <div id="opt">
+    <div id="opt" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Do they live on the island</strong></h1>
         {{optYes}}
         {{optNo}}
     </div>
 
-    <div class="unwelcome">
+    <div class="unwelcome" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Black List</strong></h1>
         <p><strong>Unwelcome: </strong>{{unwelcomeName1}} {{unwelcomeLastName1}}</p>
         <p><strong>Unwelcome: </strong>{{unwelcomeName2}} {{unwelcomeLastName2}}</p>
         <p><strong>Unwelcome: </strong>{{unwelcomeName3}} {{unwelcomeLastName3}}</p>
     </div>
 
-    <div class="second-guardian">
+    <div class="second-guardian" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Secondary Guardian</strong></h1>
         <p><strong>Name: </strong>{{secondGuardianName}} {{secondGuardianLastName}}</p>
-        <p><strong>Realation to student: </strong>{{guardianRelation2}}</p>
+        <p><strong>Relation to student: </strong>{{guardianRelation2}}</p>
         <p><strong>Gender: </strong>{{secondGuardianGender}}</p>
         <p><strong>Phone Number: </strong>{{secondGuardianPhone}}</p>
         <p><strong>Email: </strong>{{secondGuardianEmail}}</p>
     </div>
 
-    <div class="address">
+    <div class="address" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
         <h1><strong>Address</strong></h1>
         <p>{{address}}</p>
         <p>{{city}}</p>
@@ -76,5 +72,5 @@
         <p>{{hphone}}</p>
     </div>
 </body>
-
 </html>
+
