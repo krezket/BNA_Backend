@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-        body {
+    <head>
+        <style>
+            body {
             font-family: Arial, sans-serif;
             font-size: 14px;
-        }
-        h1 {
+            }
+            h1 {
             border-bottom: 1px solid #000; 
-        }
-    </style>
-</head>
+            }
+        </style>
+    </head>
 
-<body>
-    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Primary Guardian</strong></h1>
-        <p><strong>Name: </strong>{{firstGuardianName}} {{firstGuardianLastName}}</p>
-        <p><strong>Relation to student: </strong>{{guardianRelation}}</p>
-        <p><strong>Gender: </strong>{{firstGuardianGender}}</p>
-        <p><strong>Phone Number: </strong>{{firstGuardianPhone}}</p>
-        <p><strong>Email: </strong>{{firstGuardianEmail}}</p>
-        <p><strong>Employer: </strong>{{firstGuardianEmplr}}</p>
-    </div>
+    <body>
+        <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Primary Guardian</strong></h1>
+            <p><strong>Name: </strong>{{firstGuardianName}} {{firstGuardianLastName}}</p>
+            <p><strong>Relation to student: </strong>{{guardianRelation}}</p>
+            <p><strong>Gender: </strong>{{firstGuardianGender}}</p>
+            <p><strong>Phone Number: </strong>{{firstGuardianPhone}}</p>
+            <p><strong>Email: </strong>{{firstGuardianEmail}}</p>
+            <p><strong>Employer: </strong>{{firstGuardianEmplr}}</p>
+        </div>
 
-    <div id="student" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Student Info</strong></h1>
-        <p><strong>Name: </strong>{{studentName}} {{studentLastName}}</p>
-        <p><strong>Gender: </strong>{{studentGender}}</p>
-        <p><strong>Date of birth: </strong>{{studentDOB}}</p>
-        <p><strong>Allergies: </strong>{{allergies}}</p>
-        <p><strong>Illnesses: </strong>{{illnesses}}</p>
-        <p><strong>Medications: </strong>{{medications}}</p>
-        <p><strong>Interests: </strong>{{interests}}</p>
-    </div>
+        <div id="student" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Student Info</strong></h1>
+            <p><strong>Name: </strong>{{studentName}} {{studentLastName}}</p>
+            <p><strong>Gender: </strong>{{studentGender}}</p>
+            <p><strong>Date of birth: </strong>{{studentDOB}}</p>
+            <p><strong>Allergies: </strong>{{allergies}}</p>
+            <p><strong>Illnesses: </strong>{{illnesses}}</p>
+            <p><strong>Medications: </strong>{{medications}}</p>
+            <p><strong>Interests: </strong>{{interests}}</p>
+        </div>
 
-    <div id="emergency-contact" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Emergency Contact Info</strong></h1>
-        <p><strong>Name: </strong>{{emergencyName}} {{emergencyLastName}}</p>
-        <p><strong>Phone Number: </strong>{{emergencyPhone}}</p>
-        <p><strong>Email: </strong>{{emergencyEmail}}</p>
-    </div>
+        <div class="second-guardian" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Secondary Guardian</strong></h1>
+            <p><strong>Name: </strong>{{secondGuardianName}} {{secondGuardianLastName}}</p>
+            <p><strong>Relation to student: </strong>{{guardianRelation2}}</p>
+            <p><strong>Gender: </strong>{{secondGuardianGender}}</p>
+            <p><strong>Phone Number: </strong>{{secondGuardianPhone}}</p>
+            <p><strong>Email: </strong>{{secondGuardianEmail}}</p>
+        </div>
 
-    <div id="opt" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Do they live on the island</strong></h1>
-        {{optYes}}
-        {{optNo}}
-    </div>
+        <div id="emergency-contact" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Emergency Contact Info</strong></h1>
+            <p><strong>Name: </strong>{{emergencyName}} {{emergencyLastName}}</p>
+            <p><strong>Phone Number: </strong>{{emergencyPhone}}</p>
+            <p><strong>Email: </strong>{{emergencyEmail}}</p>
+        </div>
 
-    <div class="unwelcome" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Black List</strong></h1>
-        <p><strong>Unwelcome: </strong>{{unwelcomeName1}} {{unwelcomeLastName1}}</p>
-        <p><strong>Unwelcome: </strong>{{unwelcomeName2}} {{unwelcomeLastName2}}</p>
-        <p><strong>Unwelcome: </strong>{{unwelcomeName3}} {{unwelcomeLastName3}}</p>
-    </div>
+        <div id="opt" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Do they live on the island</strong></h1>
+            {{optYes}}
+            {{optNo}}
+        </div>
 
-    <div class="second-guardian" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Secondary Guardian</strong></h1>
-        <p><strong>Name: </strong>{{secondGuardianName}} {{secondGuardianLastName}}</p>
-        <p><strong>Relation to student: </strong>{{guardianRelation2}}</p>
-        <p><strong>Gender: </strong>{{secondGuardianGender}}</p>
-        <p><strong>Phone Number: </strong>{{secondGuardianPhone}}</p>
-        <p><strong>Email: </strong>{{secondGuardianEmail}}</p>
-    </div>
+        <div class="unwelcome" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Black List</strong></h1>
+            <p><strong>Unwelcome: </strong>{{unwelcomeName1}} {{unwelcomeLastName1}}</p>
+            <p><strong>Unwelcome: </strong>{{unwelcomeName2}} {{unwelcomeLastName2}}</p>
+            <p><strong>Unwelcome: </strong>{{unwelcomeName3}} {{unwelcomeLastName3}}</p>
+        </div>
 
-    <div class="address" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <h1><strong>Address</strong></h1>
-        <p>{{address}}</p>
-        <p>{{city}}</p>
-        <p>{{state}}</p>
-        <p>{{zip}}</p>
-        <p>{{hphone}}</p>
-    </div>
-</body>
+        <div class="address" style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <h1><strong>Address</strong></h1>
+            <p>{{address}}</p>
+            <p>{{city}}</p>
+            <p>{{state}}</p>
+            <p>{{zip}}</p>
+            <p>{{hphone}}</p>
+        </div>
+    </body>
 </html>
 
