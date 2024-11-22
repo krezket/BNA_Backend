@@ -68,6 +68,10 @@ app.post('/submit-form', (req, res) => {
         state, 
         zip, 
         hphone, 
+
+        m1,
+        m2, 
+        m3,
     } = req.body;
   
     const emailData =  { 
@@ -115,6 +119,10 @@ app.post('/submit-form', (req, res) => {
         state: state, 
         zip: zip, 
         hphone: hphone, 
+
+        m1: m1,
+        m2: m2,
+        m3: m3,
     }
 
     const content = temp(emailData)
