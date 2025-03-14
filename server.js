@@ -24,6 +24,9 @@ const temp = handlebars.compile(tempSource);
 
 app.post('/submit-form', (req, res) => {
   const { 
+        applicant,
+        applicantL,
+
         studentName,
         studentLastName,
         studentGender,
@@ -75,6 +78,9 @@ app.post('/submit-form', (req, res) => {
     } = req.body;
   
     const emailData =  { 
+        applicant: applicant,
+        applicantL: applicantL,
+
         studentName: studentName, 
         studentLastName: studentLastName, 
         studentGender: studentGender, 
@@ -131,7 +137,7 @@ app.post('/submit-form', (req, res) => {
     from: firstGuardianEmail,
     to: 'https.tony@yahoo.com',
     // to: 'info@bilingualnatureacademy.com',
-    subject: `New Request From ${firstGuardianName}${firstGuardianLastName}`,
+    subject: `New Request From ${applicant}${applicantL}`,
     html: content
   };
 
