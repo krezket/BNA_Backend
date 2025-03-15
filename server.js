@@ -137,7 +137,7 @@ app.post('/submit-form', (req, res) => {
     from: firstGuardianEmail,
     to: 'https.tony@yahoo.com',
     // to: 'info@bilingualnatureacademy.com',
-    subject: `New Request From ${applicant}${applicantL}`,
+    subject: `New Request From ${applicant} ${applicantL}`,
     html: content
   };
 
