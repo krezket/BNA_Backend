@@ -14,8 +14,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail', 
     auth: {
-      user: 'anthonyguerrero62@gmail.com', 
-      pass: 'zgqi abkx njgb begb' 
+      user: 'bilingualnatureacademy@gmail.com', 
+      pass: 'xzxe bpma vlec zowy' 
     }
 }));
 
@@ -135,8 +135,7 @@ app.post('/submit-form', (req, res) => {
 
   const mailOptions = {
     from: firstGuardianEmail,
-    to: 'https.tony@yahoo.com',
-    // to: 'info@bilingualnatureacademy.com',
+    to: 'info@bilingualnatureacademy.com',
     subject: `New Request From ${applicant} ${applicantL}`,
     html: content
   };
