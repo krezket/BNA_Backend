@@ -21,6 +21,8 @@ const transporter = nodemailer.createTransport(smtpTransport({
 
 const tempSource = fs.readFileSync('./handlebars/emailTemp.hbs', 'utf-8');
 const temp = handlebars.compile(tempSource);
+const tempSourceW = fs.readFileSync('./handlebars/waiverTemp.hbs', 'utf-8');
+const tempW = handlebars.compile(tempSource);
 
 app.post('/submit-form', (req, res) => {
   const { 
@@ -113,7 +115,7 @@ app.post('/submit-waiver', (req, res) => {
         date,
     } = req.body;
 
-    const content = temp(req.body)
+    const content = tempW(req.body)
 
     const mailOptions = {
         from: parentName,
