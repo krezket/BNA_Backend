@@ -77,27 +77,12 @@ app.post('/submit-form', (req, res) => {
         m3,
     } = req.body;
 
-app.post('/submit-waiver', (req, res) => {
-  const { 
-        photoPermissions,
-        
-        parentName,
-        chidrenNames,
-
-        legalGuardian,
-
-        phoneNumber,
-        emailAddress,
-        emergencyContact,
-        signature,
-        date,
-    } = req.body;
     const content = temp(req.body)
 
     const mailOptions = {
         from: firstGuardianEmail,
         to: 'info@bilingualnatureacademy.com',
-        subject: `New Request From ${parentName}`,
+        subject: `New Request From ${applicant} ${applicantL}`,
         html: content
     };
 
@@ -112,6 +97,42 @@ app.post('/submit-waiver', (req, res) => {
   });
 });
 
+app.post('/submit-waiver', (req, res) => {
+    const { 
+        photoPermissions,
+
+        parentName,
+        chidrenNames,
+
+        legalGuardian,
+
+        phoneNumber,
+        emailAddress,
+        emergencyContact,
+        signature,
+        date,
+    } = req.body;
+
+    const content = temp(req.body)
+
+    const mailOptions = {
+        from: firstGuardianEmail,
+        to: 'info@bilingualnatureacademy.com',
+        subject: `New Request From ${parentName}`,
+        html: content
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send(error);
+        } else {
+            console.log('Email sent:', info.response);
+            res.send('Email sent successfully!');
+        }
+    });
+});
+
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
