@@ -116,7 +116,7 @@ app.post('/submit-waiver', (req, res) => {
     const content = temp(req.body)
 
     const mailOptions = {
-        from: firstGuardianEmail,
+        from: parentName,
         to: 'info@bilingualnatureacademy.com',
         subject: `New Request From ${parentName}`,
         html: content
