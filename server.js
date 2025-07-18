@@ -104,7 +104,7 @@ app.post('/submit-waiver', (req, res) => {
         photoPermissions,
 
         parentName,
-        chidrenNames,
+        childrenNames,
 
         legalGuardian,
 
