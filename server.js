@@ -131,14 +131,14 @@ app.post('/submit-form', (req, res) => {
         m3: m3,
     }
 
-    const content = temp(emailData)
+    const content = temp(req.body)
 
-  const mailOptions = {
-    from: firstGuardianEmail,
-    to: 'info@bilingualnatureacademy.com',
-    subject: `New Request From ${applicant} ${applicantL}`,
-    html: content
-  };
+    const mailOptions = {
+        from: firstGuardianEmail,
+        to: 'info@bilingualnatureacademy.com',
+        subject: `New Request From ${applicant} ${applicantL}`,
+        html: content
+    };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
