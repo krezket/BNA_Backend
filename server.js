@@ -35,7 +35,7 @@ app.post('/submit-form', (req, res) => {
         illnesses,
         medications,
         interests,
-        
+
         guardianRelation,
         firstGuardianName, 
         firstGuardianLastName, 
@@ -71,72 +71,33 @@ app.post('/submit-form', (req, res) => {
         state, 
         zip, 
         hphone, 
-        
+
         m1, 
         m2,
         m3,
     } = req.body;
-  
+
 app.post('/submit-waiver', (req, res) => {
   const { 
-        applicant,
-        applicantL,
-
-        studentName,
-        studentLastName,
-        studentGender,
-        studentDOB,
-        allergies,
-        illnesses,
-        medications,
-        interests,
+        photoPermissions,
         
-        guardianRelation,
-        firstGuardianName, 
-        firstGuardianLastName, 
-        firstGuardianGender, 
-        firstGuardianPhone,
-        firstGuardianEmail,
-        firstGuardianEmplr,
+        parentName,
+        chidrenNames,
 
-        emergencyName,
-        emergencyLastName,
-        emergencyPhone,
-        emergencyEmail,
+        legalGuardian,
 
-        optYes,
-        optNo,
-
-        unwelcomeName1,
-        unwelcomeLastName1,
-        unwelcomeName2,
-        unwelcomeLastName2,
-        unwelcomeName3,
-        unwelcomeLastName3,
-
-        guardianRelation2,
-        secondGuardianName,
-        secondGuardianLastName,
-        secondGuardianGender,
-        secondGuardianPhone,
-        secondGuardianEmail,
-
-        address, 
-        city, 
-        state, 
-        zip, 
-        hphone, 
-        
-        m1, 
-        m2,
-        m3,
+        phoneNumber,
+        emailAddress,
+        emergencyContact,
+        signature,
+        date,
     } = req.body;
     const content = temp(req.body)
 
     const mailOptions = {
         from: firstGuardianEmail,
         to: 'info@bilingualnatureacademy.com',
-        subject: `New Request From ${applicant} ${applicantL}`,
+        subject: `New Request From ${parentName}`,
         html: content
     };
 
