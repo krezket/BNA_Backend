@@ -77,60 +77,60 @@ app.post('/submit-form', (req, res) => {
         m3,
     } = req.body;
   
-    // const emailData =  { 
-    //     applicant: applicant,
-    //     applicantL: applicantL,
-    //
-    //     studentName: studentName, 
-    //     studentLastName: studentLastName, 
-    //     studentGender: studentGender, 
-    //     studentDOB: studentDOB, 
-    //     allergies: allergies, 
-    //     illnesses: illnesses, 
-    //     medications: medications, 
-    //     interests: interests, 
-    //
-    //     guardianRelation: guardianRelation,
-    //     firstGuardianName: firstGuardianName,
-    //     firstGuardianLastName: firstGuardianLastName,
-    //     firstGuardianGender: firstGuardianGender,
-    //     firstGuardianPhone: firstGuardianPhone,
-    //     firstGuardianEmail: firstGuardianEmail,
-    //     firstGuardianEmplr: firstGuardianEmplr,
-    //
-    //     emergencyName: emergencyName,
-    //     emergencyLastName: emergencyLastName,
-    //     emergencyPhone: emergencyPhone,
-    //     emergencyEmail: emergencyEmail,
-    //
-    //     optYes: optYes,
-    //     optNo: optNo,
-    //
-    //     unwelcomeName1: unwelcomeName1,
-    //     unwelcomeLastName1: unwelcomeLastName1,
-    //     unwelcomeName2: unwelcomeName2,
-    //     unwelcomeLastName2: unwelcomeLastName2,
-    //     unwelcomeName3: unwelcomeName3,
-    //     unwelcomeLastName3: unwelcomeLastName3,
-    //
-    //     guardianRelation2: guardianRelation2,
-    //     secondGuardianName: secondGuardianName,
-    //     secondGuardianLastName: secondGuardianLastName,
-    //     secondGuardianGender: secondGuardianGender,
-    //     secondGuardianPhone: secondGuardianPhone,
-    //     secondGuardianEmail: secondGuardianEmail,
-    //
-    //     address: address,
-    //     city: city, 
-    //     state: state, 
-    //     zip: zip, 
-    //     hphone: hphone, 
-    //
-    //     m1: m1,
-    //     m2: m2,
-    //     m3: m3,
-    // }
+app.post('/submit-waiver', (req, res) => {
+  const { 
+        applicant,
+        applicantL,
 
+        studentName,
+        studentLastName,
+        studentGender,
+        studentDOB,
+        allergies,
+        illnesses,
+        medications,
+        interests,
+        
+        guardianRelation,
+        firstGuardianName, 
+        firstGuardianLastName, 
+        firstGuardianGender, 
+        firstGuardianPhone,
+        firstGuardianEmail,
+        firstGuardianEmplr,
+
+        emergencyName,
+        emergencyLastName,
+        emergencyPhone,
+        emergencyEmail,
+
+        optYes,
+        optNo,
+
+        unwelcomeName1,
+        unwelcomeLastName1,
+        unwelcomeName2,
+        unwelcomeLastName2,
+        unwelcomeName3,
+        unwelcomeLastName3,
+
+        guardianRelation2,
+        secondGuardianName,
+        secondGuardianLastName,
+        secondGuardianGender,
+        secondGuardianPhone,
+        secondGuardianEmail,
+
+        address, 
+        city, 
+        state, 
+        zip, 
+        hphone, 
+        
+        m1, 
+        m2,
+        m3,
+    } = req.body;
     const content = temp(req.body)
 
     const mailOptions = {
