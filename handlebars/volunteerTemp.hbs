@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        h1 {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+        <h1><strong>New Volunteer Application From: {{full_name}}</strong></h1>
+    </div>
+
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+        <p><strong>Name: </strong>{{full_name}}</p>
+        <p><strong>Preferred Name: </strong>{{preferred_name}}</p>
+        <p><strong>Date of Birth: </strong>{{date_of_birth}}</p>
+        <p><strong>Phone Number: </strong>{{phone_number}}</p>
+        <p><strong>Email: </strong>{{email_address}}</p>
+        <p><strong>Address: </strong>{{address}}</p>
+    </div>
+
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+        <h1><strong>Volunteer Purpose</strong></h1>
+        <p><strong>Purpose: </strong>{{purpose}}{{#if other_purpose}} - {{other_purpose}}{{/if}}</p>
+        <p><strong>Hours Required: </strong>{{hours_required}}</p>
+        <p><strong>Deadline: </strong>{{deadline}}</p>
+    </div>
+
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+        <h1><strong>Availability</strong></h1>
+        <p><strong>Days Available: </strong>
+            {{#if availability}}
+                {{#each availability}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+            {{else}}
+                None specified
+            {{/if}}
+        </p>
+        <p><strong>Regular Schedule Commitment: </strong>{{regular_schedule}}</p>
+    </div>
+
+    <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+        <h1><strong>Additional Information</strong></h1>
+        <p>{{additional_info}}</p>
+    </div>
+</body>
+</html>

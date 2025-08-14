@@ -14,8 +14,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail', 
     auth: {
-      user: 'bilingualnatureacademy@gmail.com', 
-      pass: 'xzxe bpma vlec zowy' 
+        user: 'bilingualnatureacademy@gmail.com', 
+        pass: 'xzxe bpma vlec zowy' 
     }
 }));
 
@@ -23,9 +23,11 @@ const tempSource = fs.readFileSync('./handlebars/emailTemp.hbs', 'utf-8');
 const temp = handlebars.compile(tempSource);
 const tempSourceW = fs.readFileSync('./handlebars/waiverTemp.hbs', 'utf-8');
 const tempW = handlebars.compile(tempSourceW);
+const tempSourceV = fs.readFileSync('./handlebars/volunteerTemp.hbs', 'utf-8');
+const tempV = handlebars.compile(tempSourceV);
 
 app.post('/submit-form', (req, res) => {
-  const { 
+    const { 
         applicant,
         applicantL,
 
@@ -88,15 +90,15 @@ app.post('/submit-form', (req, res) => {
         html: content
     };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      res.status(500).send(error);
-    } else {
-      console.log('Email sent:', info.response);
-      res.send('Email sent successfully!');
-    }
-  });
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send(error);
+        } else {
+            console.log('Email sent:', info.response);
+            res.send('Email sent successfully!');
+        }
+    });
 });
 
 app.post('/submit-waiver', (req, res) => {
@@ -123,7 +125,6 @@ app.post('/submit-waiver', (req, res) => {
         subject: `New Request From ${parentName}`,
         html: content
     };
-
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
@@ -134,6 +135,43 @@ app.post('/submit-waiver', (req, res) => {
         }
     });
 });
+
+    app.post('/submit-volunteer', (req, res) => {
+        const {
+            full_name,
+            preferred_name,
+            date_of_birth,
+            phone_number,
+            email_address,
+            address,
+            purpose,
+            other_purpose,
+            hours_required,
+            deadline,
+            availability,
+            regular_schedule,
+            additional_info
+        } = req.body;
+
+        const content = tempV(req.body); // however you generate your email HTML
+
+        const mailOptions = {
+            from: email_address, // sender email from form
+            to: 'info@bilingualnatureacademy.com',
+            subject: `New Volunteer Request From ${full_name}`,
+            html: content
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error(error);
+                return res.status(500).send(error.toString());
+            }
+            console.log('Email sent:', info.response);
+            res.send('Email sent successfully!');
+        });
+    });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
