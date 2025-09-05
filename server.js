@@ -21,6 +21,8 @@ const transporter = nodemailer.createTransport(smtpTransport({
 
 const tempSource = fs.readFileSync('./handlebars/emailTemp.hbs', 'utf-8');
 const temp = handlebars.compile(tempSource);
+const tempSourceS = fs.readFileSync('./handlebars/scholarshipTemp.hbs', 'utf-8');
+const tempS = handlebars.compile(tempSourceS);
 const tempSourceW = fs.readFileSync('./handlebars/waiverTemp.hbs', 'utf-8');
 const tempW = handlebars.compile(tempSourceW);
 const tempSourceV = fs.readFileSync('./handlebars/volunteerTemp.hbs', 'utf-8');
@@ -82,6 +84,81 @@ app.post('/submit-form', (req, res) => {
     } = req.body;
 
     const content = temp(req.body)
+
+    const mailOptions = {
+        from: firstGuardianEmail,
+        to: 'info@bilingualnatureacademy.com',
+        subject: `New Request From ${applicant} ${applicantL}`,
+        html: content
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send(error);
+        } else {
+            console.log('Email sent:', info.response);
+            res.send('Email sent successfully!');
+        }
+    });
+});
+
+app.post('/submit-scholarship', (req, res) => {
+    const { 
+        applicant,
+        applicantL,
+
+        studentName,
+        studentLastName,
+        studentGender,
+        studentDOB,
+        allergies,
+        illnesses,
+        medications,
+        interests,
+
+        guardianRelation,
+        firstGuardianName, 
+        firstGuardianLastName, 
+        firstGuardianGender, 
+        firstGuardianPhone,
+        firstGuardianEmail,
+        firstGuardianEmplr,
+
+        emergencyName,
+        emergencyLastName,
+        emergencyPhone,
+        emergencyEmail,
+
+        optYes,
+        optNo,
+
+        unwelcomeName1,
+        unwelcomeLastName1,
+        unwelcomeName2,
+        unwelcomeLastName2,
+        unwelcomeName3,
+        unwelcomeLastName3,
+
+        guardianRelation2,
+        secondGuardianName,
+        secondGuardianLastName,
+        secondGuardianGender,
+        secondGuardianPhone,
+        secondGuardianEmail,
+
+        address, 
+        city, 
+        state, 
+        zip, 
+        hphone, 
+
+        m1, 
+        m2,
+        m3,
+    } = req.body;
+
+    const content = tempS(req.body)
 
     const mailOptions = {
         from: firstGuardianEmail,
