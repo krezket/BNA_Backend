@@ -81,6 +81,11 @@ app.post('/submit-form', (req, res) => {
         m1, 
         m2,
         m3,
+
+        optAM,
+        optPM,
+
+        m4,
     } = req.body;
 
     const content = temp(req.body)
