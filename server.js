@@ -189,8 +189,14 @@ app.post('/submit-waiver', (req, res) => {
 
                 parentName,
                 childrenNames,
+                childrenCA,
+                childrenDOB,
+                illnessess,
 
+                pottyTrained,
                 legalGuardian,
+                other,
+                dropOffDate,
                 dropOff,
 
                 phoneNumber,
